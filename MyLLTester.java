@@ -4,7 +4,7 @@ public class MyLLTester
   {
   MyLinkedList list = new MyLinkedList();
 
-  System.out.println("Is list empty?" + list.isEmpty());
+  System.out.println("Is list empty? " + list.isEmpty());
 
 
 
