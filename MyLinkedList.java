@@ -98,6 +98,46 @@ public class MyLinkedList
     }
 
     public Object removeFirst(){
+        if(isEmpty())
+            return null;
+        
+            Object val = head.getValue();
+            head = head.getNext();
+            size--;
+            return val;
+    }
+
+    public Object removeLast(){
+        if(isEmpty())
+            return null;
+        
+        Object val;
+        if(size == 1){
+            val = head.getValue();
+            head = null;
+        }
+        else{
+            ListNode previous = head;
+            for(int x=0; x<size-2; x++){
+                previous = previous.getNext();
+            }
+            val = previous.getNext().getValue();
+            previous.setNext(null);
+        }
+        size--;
+        return val;
+    }
+
+    public String toString(){
+        String result = "";
+        ListNode current = head;
+        int pos = 1;
+
+        while(current != null){
+            result += pos + ": " + current.getValue() + "\n";
+            current = current.getNext();
+            pos++;
+        }
         
     }
 
